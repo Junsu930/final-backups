@@ -1,0 +1,449 @@
+
+/* ===============================paht css=============================== */
+
+
+
+
+.path{
+    fill: none;
+    stroke: var(--stroke-color);
+    stroke-width: 3px;
+  }
+
+
+.path1 {
+  stroke-dasharray: 17285.3;
+  animation: drawPath 1.7s linear, floating 3s linear infinite;
+}
+
+.content{
+  width: 100%;
+  font-family: var(--navFont-style-);
+  color:var(--text-color);
+}
+
+
+
+.content1, .content3, .content5{
+  padding-top: 110px;
+  overflow: hidden;
+}
+
+.path1, .path3{
+  fill: none;
+  stroke: var(--stroke-color);
+  stroke-width: 3px;
+}
+
+.path5{
+  stroke-width: 1.5px;
+  stroke: var(--stroke-color);
+}
+
+
+
+
+@keyframes drawPath {
+
+    0% {
+        stroke-dashoffset: 17285.3;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+    }
+
+@keyframes floating {
+
+    50% {
+        transform: translate3d(0, 10px, 0);
+    }
+}
+
+/* ===============================path css=============================== */
+
+
+.mainQuestion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20em;
+  margin-top: 5em;
+  font-family: var(--navFont-style-);
+}
+
+
+.mainQuestion > div:first-child{
+  margin-bottom: 5em;
+  padding: 3em 3em;
+}
+
+h2{
+  padding: 1em 0 0 1.5em;
+}
+
+
+.mainQuestion > div:last-child{
+  width: 100%;
+}
+
+
+.questionInput{
+  padding:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.questionInput > form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainInput{
+  margin: 2em 0;
+  height: 45px;
+  width: 35%;
+  padding: 1em 1em;
+  border: 1.5px solid #868E96;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1em;
+  background-color:transparent;
+  min-width: 400px;
+}
+
+.label{
+  width: 35%;
+  min-width: 400px;
+}
+
+.inputEmail{
+  font-family: var(--navFont-style-);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.mainTextArea{
+  resize: none;
+  height: 150px;
+  font-size: 1.3em;
+}
+
+.questionInput button{
+  background-color: transparent;
+  border: 1.5px solid #868E96;
+  border-radius: 5px;
+  width: 35%;
+  height: 50px;
+  cursor: pointer;
+}
+
+
+
+
+/* ===============================main Text=============================== */
+
+
+.content2, .content3, .content4{
+  position: relative;
+  overflow: hidden;
+}
+
+/* guitar Text */
+.boardText{
+  color: #000;
+  position: absolute;
+  right: 1em;
+  bottom: 16em;
+  padding: 3em 3em;
+  width: 45%;
+  opacity: 0;
+}
+
+body.darkmode .mainTextP, body.darkmode .mainTextA{
+	color: var(--background-color);
+}
+
+body.darkmode .bi-chevron-compact-up{
+	color: var(--background-color);
+}
+
+/*bi-arrow-up-short*/
+
+.mainTextP{
+	color: var(--text-color);
+}
+
+
+.boardText > div{
+  height: 100%;
+}
+
+.boardText a{
+  padding: 1em 1em;
+  color: #000;
+  text-decoration: none;
+}
+
+.boardText p:first-child{
+  font-size: 1.8em;
+  padding-left: 0.5em;
+}
+
+
+.boardText p:nth-child(2){
+  padding: 1em 1em;
+}
+
+
+.boardText hr{
+  width: 100px;
+  position: relative;
+  margin-left: 1em;
+}
+
+
+/* ======================================================== */
+
+/* drum Text */
+.usedText{
+  color: #000;
+  position: absolute;
+  top: 12em;
+  right: 0;
+  bottom: 0;
+  left: 12em;
+  padding: 3em 3em;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+
+.usedText p:first-child{
+  font-size: 1.8em;
+  padding-left: 0.5em;
+}
+
+.usedText p:nth-child(2){
+  padding: 1em 1em;
+}
+
+.usedText a{
+  padding: 1em 1em;
+  color: #000;
+  text-decoration: none;
+}
+
+.usedText hr{
+  width: 100px;
+  margin-left: 0.825em;
+} 
+
+
+/* ======================================================== */
+
+
+/* headPhone Text */
+.reservationText{
+  color: #000;
+  position: absolute;
+  top: 3em;
+  right: 10em;
+  /* bottom: 0; */
+  /* left: 42em; */
+  padding: 3em 3em;
+  height: 100%;
+  opacity: 0;
+}
+
+.reservationText > div{
+  height: 100%;
+  width: 100%;
+}
+
+.reservationText p:first-child{
+  font-size: 1.8em;
+  padding-left: 0.5em;
+}
+
+.reservationText p:nth-child(2){
+  padding: 1em 1em;
+}
+
+.reservationText a{
+  padding: 1em 1em;
+  color: #000;
+  text-decoration: none;
+}
+
+.reservationText hr{
+  width: 100px;
+  margin-left: 1em;
+}
+
+/* ======================================================== */
+
+
+/* ===================main Text KeyFrames=================== */
+
+/* guitar Text */
+@keyframes slideGuitar{
+  from{
+    right: -38em;
+    opacity: 0;
+
+  }to{
+    right: 1em;
+    opacity: 1;
+  }
+}
+/* 1331 */
+
+@keyframes disappearSlideGuitar{
+  from{
+    right: 1em;
+    opacity: 1;
+  }to{
+    right: -38em;
+    opacity: 0;
+  }
+}
+/* 2050 */
+
+
+/* drum Text */
+@keyframes slideDrum{
+  from{
+    left: -12em;
+    opacity: 0;
+  }to{
+    left:12em;
+    opacity: 1;
+  }
+}
+
+/* 2108 */
+
+@keyframes disappearSlideDrum{
+  from{
+    left:12em;
+    opacity: 1;
+  }to{
+    left: -12em;
+    opacity: 0;
+  }
+}
+/* 2850 */
+
+
+@keyframes slideHeadPhone{
+  from{
+    top: 20em;
+    opacity: 0;
+  }to{
+    top: 3em;
+    opacity: 1;
+  }
+}
+
+/* 2970 */
+
+@keyframes disappearSlideHeadPhone{
+  from{
+    top: 3em;
+    opacity: 1;
+  }to{
+    top: 20em;
+    opacity: 0;
+  }
+}
+
+/* 3730 */
+
+
+/* ===================main Text KeyFrames=================== */
+
+
+/* mian Text media */
+
+@media screen and (max-width:53em){
+  .mainTextP, hr, .topBtn{
+    display: none;
+  }
+  .mainBoard{
+    font-size: 2em;
+    position: absolute;
+    bottom: -3.5em;
+  }
+ 
+
+  .mainUsed{
+    font-size: 2em;
+    position: absolute;
+    top: -1.3em;
+    left: -2em;
+  }
+
+
+  .mainReser{
+    font-size: 2em;
+    position: absolute;
+    left: -16em;
+    top: -0.8em;
+  }
+  
+
+
+ 
+
+
+}
+
+/* mian Text media */
+
+/* ===============================main Text=============================== */
+
+
+
+/* top button */
+
+
+.show{
+  transition: opacity 1s ease-out;
+  opacity: 1 !important;
+}
+
+
+
+.topBtn{
+  position: fixed;
+  bottom: 1em;
+  right: 3em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 99;
+  transition: opacity 0.7s ease-out;
+  opacity: 0;
+}
+
+.bi-chevron-compact-up{
+  font-size: 3em;
+  color: var(--text-color);
+}
+
+
+
+

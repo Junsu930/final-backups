@@ -1,0 +1,284 @@
+*{
+	box-sizing: border-box;
+}
+
+/*
+div{
+	border: 1px solid;
+	border-color: var(--text-color);
+}
+
+body.darkmode div{
+	border-color: var(--background-color);
+}
+*/
+
+body{
+	margin: 0px;
+}
+
+.content{
+	width: 80%;
+	margin: auto;
+	margin-top : 200px;
+	
+}
+
+/* 분류창 */
+.sorting-bar{
+	width : 90%;
+	height : 200px;
+	border-bottom: 1px solid;
+	border-bottom-color : var(--silver-color);
+	display: flex;
+	margin: auto;
+}
+
+
+/* 분류 메뉴 */
+.sorting-bar > div:first-child{
+	flex-basis: 30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sorting-bar > div:last-child {
+	flex-basis: 70%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  	position: relative;
+}
+
+select{
+	width: 200px; 
+	padding: .8em .5em; 
+	border: 1px solid #999;
+	font-family: inherit;    
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 10px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+#room-search{
+	width: 75%; 
+	padding: .8em .5em; 
+	border: 1px solid #999;
+	border-radius: 10px;
+	-webkit-appearance: none; 
+	-moz-appearance: none;
+	appearance: none;
+}
+
+/* 검색 버튼 */
+#s-btn{
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+	position: absolute;
+	right: 9em;
+	
+}
+
+/* 연습실 목록 뷰 */
+.main-card-sec{
+	display: flex;
+	justify-content : space-around;
+	flex-wrap: wrap;
+	
+}
+
+/* 각각의 연습실*/
+.box-card{
+	width: 300px;
+	height: 300px;
+	margin: 2em;
+	border-radius: 10px;
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	
+}
+
+body.darkmode .box-card{
+	border: 1px solid;
+	border-color: var(--background-color);
+}
+/* 사진 영역 */
+.box-card > div:nth-child(1) {
+	flex-basis: 50%;
+	background-image: url('../images/band.jpg');
+	background-size: cover;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	margin-bottom: 5px;
+}
+/* 제목 글씨 */
+.box-card > div:nth-child(2) {
+	flex-basis: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+.box-card > div:nth-child(3) {
+	flex-basis: 40%;
+}
+
+/* 상세 설명 영역 */
+#detail-part{
+	display: flex;
+}
+
+#detail-part > div:nth-child(1) {
+	flex-basis: 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+/* 지역 영역 */
+#detail-part > div:nth-child(1) > div:first-child{
+	flex-basis: 50%;
+	display: flex;
+	align-items: center;
+	margin-left: 5px;
+}
+
+/* 구성 영역 */
+#detail-part > div:nth-child(1) > div:last-child{
+	flex-basis: 50%;
+	display: flex;
+	font-size: 0.7em;
+	margin-left: 5px;
+}
+
+/* 가격 영역 */
+#detail-part > div:nth-child(2) {
+	flex-basis: 50%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 2em;
+	align-items: center;
+}
+
+#detail-part > div:nth-child(2) > i{
+	margin: 10px;
+}
+
+
+#titleLogo{
+	animation: fill 0.3s ease forwards 0.6s;
+}
+
+
+
+#titleLogo path:nth-child(1){
+	stroke-dasharray: 549;
+	stroke-dashoffset: 549;
+	animation: line-anim 2s ease forwards;
+}
+
+#titleLogo path:nth-child(2){
+	stroke-dasharray: 55;
+	stroke-dashoffset: 55;
+	animation: line-anim 1.5s ease forwards;
+
+}
+
+#titleLogo path:nth-child(3){
+	stroke-dasharray: 463;
+	stroke-dashoffset: 463;
+	animation: line-anim 2.3s ease forwards;
+}
+
+#titleLogo path:nth-child(4){
+	stroke-dasharray: 55;
+	stroke-dashoffset: 55;
+	animation: line-anim 1.8s ease forwards;
+}
+
+#titleLogo path:nth-child(5){
+	stroke-dasharray: 453;
+	stroke-dashoffset: 453;
+	animation: line-anim 2.1s ease forwards;
+}
+
+
+body.darkmode #titleLogo path{
+	stroke: white;
+}
+
+body.darkmode #titleLogo{
+	animation: fill-dark 0.2s ease forwards 0.6s;
+}
+
+.space-name > p{
+	font-size: 1.3em;	
+}
+
+
+
+@keyframes line-anim{
+	to{
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes fill{
+	from{
+		fill:transparent;
+	}
+	to{
+		fill : black;
+	}
+}
+
+@keyframes fill-dark{
+	from{
+		fill:transparent;
+	}
+	to{
+		fill : white;
+	}
+}
+
+
+
+
+.logoDiv{
+	margin-left : 4em;
+}
+
+@media (max-width:46.875rem){
+	
+	.content{
+
+	width: 500px;
+	margin: auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	
+	}
+	select {
+	
+		width: 100px;
+	}
+	
+	#s-btn{
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+	position: absolute;
+	right: 6em;
+	
+	}
+}
