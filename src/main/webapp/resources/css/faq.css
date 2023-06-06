@@ -1,17 +1,16 @@
 #faqBox{
-	width:500px;
-	height: 500px;
 	position: fixed;
 	left: 50px;
 	bottom: 130px;
 	background-color: var(--grr-color);
 	border-radius: 10px;
-	display: none;
+	display: flex;
 	justify-content: center;
 	z-index: 100;
 	flex-direction: column;
     justify-content: flex-start;
     overflow: auto;
+    transition-duration : 1s;
 }
 
 #faq-img{
@@ -36,11 +35,15 @@
 	margin-left: 20px;
 }
 
+.faqQuestion .talking{
+	background-color: var(--background-color);
+	color: var(--text-color);
+	border-radius: 10px;
+}
+
+
 .talking{
 	padding : 5px;
-	background-color: white;
-	border-radius: 14px;
-	color: black;
 }
 
 .faqDuck{
@@ -72,19 +75,90 @@
 
 .Q-lists li{
 	padding: 5px;
+	background-color: var(--background-color);
+	color: var(--text-color);
+	list-style: none;
+	margin: 5px;
+	border-radius: 10px;
 }
+
+
+.answerBox{
+	background: white;
+    padding: 5px;
+    border-radius: 10px;
+    color: black;
+}
+
+
+/* display를 나타나게 하는 속성 */
+.appear{
+	width: 500px;
+	height: 500px;
+}
+
+/* dispaly를 사라지게 하는 속성 */
+.disappear{
+	width: 0px;
+	height: 0px;
+}
+
+
+@media (max-width:46.875rem){
+	#faqBox{
+		width: 400px;
+	}
+		
+	
+}
+
+/* 폰 */
+@media (max-width: 420px) {
+  	#faqBox{
+  		width: 300px;
+  	}
+}
+
+
+
 
 #faqBox::-webkit-scrollbar {
     width: 4px;  /* 스크롤바의 너비 */
 }
 
 #faqBox::-webkit-scrollbar-thumb {
-    height: 30%; /* 스크롤바의 길이 */
+    height: 15%; /* 스크롤바의 길이 */
     background: var(--grey-color); /* 스크롤바의 색상 */
-    
     border-radius: 10px;
 }
 
 #faqBox::-webkit-scrollbar-track {
-    background: var(--grr-color);  /*스크롤바 뒷 배경 색상*/
+    background: var(--scroll-background-color);  /*스크롤바 뒷 배경 색상*/
 }
+
+.darkmode #faqBox::-webkit-scrollbar-track {
+    background: transparent;  /*스크롤바 뒷 배경 색상*/
+}
+
+.darkmode #faqBox::-webkit-scrollbar-thumb {
+    background: var(--scroll-dark-color); /* 다크모드 스크롤바 연한 핑크 */
+}
+
+.moreQuestion{
+	padding: 5px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    list-style: none;
+    margin: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.replayQuestion {
+	margin-bottom: 30px;
+	background-color: var(--accent-color);
+	border-radius: 10px;
+	width: fit-content;
+    padding: 0 10px;
+}
+

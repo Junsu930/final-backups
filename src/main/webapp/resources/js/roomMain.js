@@ -58,3 +58,10 @@ for(let i = 0; i<titleLogo.length; i++){
 	console.log(`Letter ${i} is ${titleLogo[i].getTotalLength()}`);
 }
 
+/*********  모달  ***********/
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+});

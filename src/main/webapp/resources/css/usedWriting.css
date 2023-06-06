@@ -1,0 +1,161 @@
+.usedContent{
+	width: 80%;
+	height: 200vh;
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	margin-top: 10em;
+	margin-bottom: 6em;
+	flex-direction: column;
+	
+}
+
+.usedContent div{
+	border: 1px solid black;
+
+}
+.usedContent >div{
+	width: 100%;
+}
+
+
+/* 기본 정보 */
+.usedContent > div:nth-of-type(1) {
+	flex-basis: 5%;
+	display: flex;
+	justify-content: flex-start;
+	align-items : flex-end;
+	border-bottom: 2px solid var(--grey-color);
+	padding: 1em;
+	
+}
+
+.usedContent > div:nth-of-type(1) > p:nth-child(1){
+	font-size: 1.4em;
+	margin-right: 10px;
+}
+
+.usedContent > div:nth-of-type(1) > p:nth-child(2){
+	color: var(--red-color);
+}
+/* 상품 이미지 */
+.usedContent > div:nth-of-type(2) {
+	flex-basis: 20%;
+	display: flex;
+	border-bottom: 2px solid var(--grey-color);
+	padding: 1em;
+}
+.usedContent > div:nth-of-type(2) > div:nth-of-type(1){
+	flex-basis: 12%;
+}
+/* 사진 칸 */
+.usedContent > div:nth-of-type(2) > div:nth-of-type(2){
+	width: 300px;
+	height: 250px;
+	cursor: pointer;
+
+}
+
+#imageInsertPic{
+	width: 100%;
+	height: 100%;
+}
+/* 제목 */
+.usedContent > div:nth-of-type(3) {
+	flex-basis: 5%;
+	display: flex;
+	border-bottom: 2px solid var(--grey-color);
+	padding: 1em;
+}
+
+usedTitleInputTextLength{
+	align-self: flex-end;
+}
+
+.usedContent > div:nth-of-type(3) > div:nth-child(1){
+	flex-basis: 12%;
+}
+
+.usedTitleDiv{
+	display: flex;
+	width: 90%;
+	
+}
+
+.usedTitleDiv > input{
+	width: 70%;
+	margin-right: 10px;
+	height: 3em;
+}
+
+
+/* 거래 지역 */
+.usedContent > div:nth-of-type(4) {
+	flex-basis: 20%;
+	display: flex;
+	padding: 1em;
+	
+}
+
+.usedContent > div:nth-of-type(4) > div:nth-child(1){
+	flex-basis: 12%;
+}
+
+.regionCardBox{
+	width: 60%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.regionCard{
+	width: 7em;
+	height: 3em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+	margin-top: 0;
+	cursor: pointer;
+}
+
+.regionCard > label{
+	width: 100%;
+	height : 100%;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid var(--grey-color);
+}
+
+.regionBtn{
+	display: none;
+}
+
+.regionBtn:checked + label{
+	background-color: var(--accent-color);
+}
+
+
+
+
+/* 상태 */
+.usedContent > div:nth-of-type(5) {
+	flex-basis: 5%;
+	
+}
+/* 가격 */
+.usedContent > div:nth-of-type(6) {
+	flex-basis: 15%;
+}
+/* 설명 */
+.usedContent > div:nth-of-type(7) {
+	flex-basis: 25%;
+}
+/* 버튼 */
+.usedContent > div:nth-of-type(8) {
+	flex-basis: 5%;
+}
