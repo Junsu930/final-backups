@@ -58,10 +58,91 @@ for(let i = 0; i<titleLogo.length; i++){
 	console.log(`Letter ${i} is ${titleLogo[i].getTotalLength()}`);
 }
 
-/*********  모달  ***********/
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
+$('#regionBtn').on("click",()=>{
 
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
+	if($('#regionListUl').hasClass("disappearList")){
+		
+		$('#bi').toggleClass( "bi-caret-up");
+		$('#regionListUl').removeClass("disappearList");
+	}else{
+
+		$('#bi').toggleClass( "bi-caret-up");
+		$('#regionListUl').addClass("disappearList");
+	}
+
+
+});
+
+$(document).click(e=>{
+
+	if(!$(e.target).parent().hasClass('regionBtn') && !$(e.target).hasClass('regionBtn')
+		&& !$(e.target).parent().hasClass('reginListUl')){
+		if(!$('#regionListUl').hasClass("disappearList")){
+			
+			$('#bi').toggleClass( "bi-caret-up");
+			$('#regionListUl').addClass("disappearList");
+		}
+	}
+
+})
+
+let liArr = $('#regionListUl > li');
+
+for(let eachLi of liArr){
+	$(eachLi).click(()=>{
+		$('#regionTextSpan').html($(eachLi).html());
+	})
+}
+
+
+
+
+// 프로필 보기 모달
+
+$('#toModalDiv').click(()=>{
+  let userId = $("#hiddenUserNo").val();
+
+  $.ajax({
+      type: 'post',
+      url: '/fin/dbTest',
+      async: true,
+      data:{'userNo' : userId},
+      dataType: 'JSON',
+      beforeSend:function(){
+        $('.wrap-loading').removeClass('display-none');
+        $('.modal-content').css("display", 'none');
+      },complete:function(){
+        $('.wrap-loading').addClass('display-none');
+        $('.modal-content').css("display", 'flex');
+      },
+      success: function(data){   
+          $("#modalMainTitle").html(data.userName + "님의 프로필");
+          $("#modalInName").html(data.userName);
+          $("#modalInEmail").html(data.userEmail);
+          $("#modalInInst").html(data.inst);
+          $("#modalInGenre").html(data.genreFavor);
+          $("#modalInRegion").html(data.region);
+          $("#modalInExp").html(data.yoe);
+          $("#modalInMent").html(data.introMent);
+
+      },
+      error: function(err){
+          console.log(err);
+      }
+  })
+
+});
+
+
+// 회원 임시 설정하기
+$("#first-user").click(()=>{
+    $("#beingUserInput").val("1");
+});
+
+$("#second-user").click(()=>{
+  $("#beingUserInput").val("2");
+});
+
+$("#third-user").click(()=>{
+  $("#beingUserInput").val("3");
 });

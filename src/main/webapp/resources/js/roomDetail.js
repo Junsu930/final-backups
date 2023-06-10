@@ -17,6 +17,7 @@ let greenList = new Array();
         locale: 'ko', // 한국어 설정
         expandRows: true, // 화면에 맞게 높이 재설정
         height: '500px', // calendar 높이 설정
+        width: '500px',
         dateClick: function(info) {
         
         greenList = document.getElementsByClassName("greenDay");
@@ -122,4 +123,32 @@ document.getElementById("timeSubmit").addEventListener("click", function(){
 
 })
 
+let webSoc; //웹소켓 변수 선언
+
+// 채팅방 연결용 !
+$("#oneChat").click(e=>{
+    let ipAddr = document.getElementById("ipAddr").value;
+    let rN = e.target.value;
+
+    alert("버튼 클릭스");
+
+    webSoc = new WebSocket("ws://" + ipAddr +':8080' + "/fin/chatting/" + rN);
+});
+
+$("#twoChat").click(e=>{
+    let ipAddr = document.getElementById("ipAddr").value;
+    let rN = e.target.value;
+
+
+    console.log(rN);
+    webSoc = new WebSocket("ws://" + ipAddr +':8080' + "/fin/chatting/" + rN);
+});
+
+$("#threeChat").click(e=>{
+    let ipAddr = document.getElementById("ipAddr").value;
+    let rN = e.target.value;
+
+    console.log(rN);
+    webSoc = new WebSocket("ws://" + ipAddr +':8080' + "/fin/chatting/" + rN);
+})
 

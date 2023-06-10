@@ -57,12 +57,14 @@ for(let i = 0; i< path.length; i ++){
   path[i].style.stroke ="#FB4F93";
 }
 
-let mainInput = document.querySelectorAll('.mainInput');
 
 
-for(let j = 0; j < mainInput.length; j++){
-    	mainInput[j].style.color = "#fff";
-}
+// let mainInput = document.querySelectorAll('.mainInput');
+
+
+// for(let j = 0; j < mainInput.length; j++){
+//     	mainInput[j].style.color = "#fff";
+// }
  
 
   // 각각 요소 색깔 바꾸기
@@ -140,23 +142,4 @@ sun.addEventListener('click', () => {
 
 
 
-const modal = document.getElementById("modal");
-const openModalBtn = document.getElementById("open-modal");
-const closeModalBtn = document.getElementById("close-modal");
-// 모달창 열기
-openModalBtn.addEventListener("click", () => {
-  modal.style.display = "block";
-  document.body.style.overflow = "hidden"; // 스크롤바 제거
-});
-// 모달창 닫기
-closeModalBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-  document.body.style.overflow = "auto"; // 스크롤바 보이기
-});
-
-modal.addEventListener("click", e => {
-    const evTarget = e.target
-    if(evTarget.classList.contains("modal-content")) {
-        modal.style.display = "none"
-    }
-})
+  

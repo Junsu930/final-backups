@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.net.InetAddress"%>
+<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,34 @@
 <title>예약실 상세</title>
 </head>
 <body>
+
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+		
+<%
+	String strIpAddress = "";
+
+	try {
+		InetAddress inetAddress = InetAddress.getLocalHost();
+		strIpAddress = inetAddress.getHostAddress();
+		
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+%>
+<input type="hidden" id="ipAddr" value="<%=strIpAddress%>">
+		<c:if test="${sessionScope.tempUser.userNo eq '1'}">
+			<button id="twoChat" value="1_2">2번과 채팅시작</button>
+			<button id="threeChat" value="1_3">3번과 채팅시작</button>
+		</c:if>
+		<c:if test="${sessionScope.tempUser.userNo eq '2'}">
+			<button id="oneChat" value="1_2">1번과 채팅시작</button>
+			<button id="threeChat" value="2_3">3번과 채팅시작</button>
+		</c:if>
+		<c:if test="${sessionScope.tempUser.userNo eq '3'}">
+			<button id="oneChat" value="1_3">1번과 채팅시작</button>
+			<button id="twoChat" value="2_3">2번과 채팅시작</button>
+		</c:if>
 
 	<div class="content">
 		<!-- left -->

@@ -1,5 +1,9 @@
-let ws;
 
+// 채팅방 번호를 저장
+let chatRoomNo;
+
+
+/*
 document.getElementById("chatting-img").addEventListener("click", function(){
 	
 	let messageWindow = document.getElementById("chatBody");
@@ -22,13 +26,72 @@ document.getElementById("chatting-img").addEventListener("click", function(){
 		messageWindow.style.display = 'none';
 	}
 });
+*/
 
+document.getElementById("chatting-img").addEventListener("click", function(){
 
+	let chatRoomList = document.getElementById("roomList");
+	let chatBody = document.getElementById("chatBody");
+	
+	if(chatRoomList.style.display == 'none' || chatRoomList.style.display == 0 ){
+		chatRoomList.style.display = 'flex';
+		
+		if(document.getElementById("faqBox").style.width != '0px' || document.getElementById("faqBox").style.width != 0){
+			document.getElementById("faqBox").classList.remove('appear');
+			document.getElementById("faqBox").classList.add('disappear');
+		}
+	}else{
+		chatRoomList.style.display = 'none';
+	}
 
+	if(chatBody.style.display != 'none' && chatRoomList.style.display !='none'){
+		chatBody.style.display = 'none';
+		chatRoomList.style.display = 'none';
+	}
 
-function wsOpen(){
-	ws = new WebSocket("ws://" + '192.168.140.235:8080' + "/fin/chatting");
-	console.log("소켓 주소 : " + "ws://" + '192.168.140.235:8080' + "/fin/chatting");
+});
+
+let eachRoomList = document.getElementsByClassName("eachRoomList");
+
+// 열려 있는 채팅방을 눌렀을 때, 채팅방 주소 규칙(/fin/chatting/호스트유저넘_게스트유저넘)
+/*
+for(let eachRoom of eachRoomList){
+	eachRoom.addEventListener("click", e=>{
+
+		// 다음 요소인 input에 담아둔 hidden 요소 
+		chatRoomNo =  $(e.target).next().val();
+
+		console.log("채팅방 넘버 : " + chatRoomNo);
+
+		// 열려진 채팅방 넘버 클래스
+		let chatRooms = document.getElementsByClassName("chatRooms");
+		
+		let chatArr = new Array;
+	
+		if(chatArr.indexOf(chatRoomNo) < 0){
+			// 소켓 안 열려 있으면
+			wsOpen(chatRoomNo); //소켓 열고 arr에 넣는다
+			chatArr.push(chatRoomNo);
+		}
+
+		
+
+		$("#roomList").css("display", "none");
+		$("#chatBody").css("display", "flex");
+	});
+
+}
+
+*/
+
+function wsOpen(chatRoomNo){
+
+    let ipAddr = document.getElementById("ipAddr").value;
+    
+	console.log("소켓 정보 확인해볼래 " + ws);
+
+	ws = new WebSocket("ws://" + ipAddr +':8080' + "/fin/chatting/" + chatRoomNo);
+	console.log("소켓 주소 : " + "ws://" + ipAddr + ':8080' + "/fin/chatting/" +chatRoomNo);
 	
 	console.log(ws);
 	wsEvt();
@@ -37,6 +100,9 @@ function wsOpen(){
 function wsEvt(){
 	ws.onopen = function(data){
 		// 소켓이 열리면 초기화 세팅하기
+		console.log("열린 소켓의 데이터 : "+data);
+		
+
 	}
 
 	ws.onmessage = function(data){
@@ -102,8 +168,9 @@ function send(){
 	let option={
 		type : "message",
 		sessionId : $("#sessionId").val(),
-		userName : '깅깅이',
-		msg : $('#messageText').val()
+		userName : $("#sessionUserName").val(),
+		msg : $('#messageText').val(),
+		chatRoomNo : chatRoomNo
 	}
 
 	let uN = "강강이";

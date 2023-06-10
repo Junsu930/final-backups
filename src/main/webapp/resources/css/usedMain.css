@@ -5,13 +5,50 @@ body{
     margin: 0px;
 }
 
+
+
+
 .main{
     width: 80%;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 400px;
+    margin-bottom: 400px;
 	
 
 }
+
+
+
+
+.usedPath{
+    fill: none;
+    stroke: #000;
+    stroke-miterlimit: 10;
+    stroke-width: 1.5px;
+    stroke-dasharray: 4638.24365234375;
+    animation: drawPath 2s linear, floating 3s linear infinite;
+}
+
+@keyframes drawPath {
+
+    0% {
+        stroke-dashoffset: 4638.24365234375;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes floating {
+
+    50% {
+        transform: translate3d(0, 5px, 0);
+    }
+}
+
+
+
+
 
 #searchboxInput{
 	width : 90%;
@@ -36,7 +73,7 @@ body{
 
 
 body.darkmode .fa-magnifying-glass{
-	color:var(--text-dark-color);
+	color:var(--background-dark-color);
 }
 .fa-solid fa-magnifying-glass{
 	position: absolute;
@@ -211,6 +248,8 @@ body.darkmode .fa-magnifying-glass{
 	
 }
 
+
+
 /*아이폰 SE*/
 
 
@@ -227,8 +266,12 @@ body.darkmode .fa-magnifying-glass{
 
 }
 .main{
-	width: 80%;/**/
-	margin: auto;/**/
+	
+
+    width: 80%;
+    margin: auto;
+    padding-top: 300px;
+    padding-bottom: 300px;
 	
 }
 .topbox{
@@ -286,7 +329,8 @@ body.darkmode .fa-magnifying-glass{
 .main{
 	width: 80%;/**/
 	margin: auto;/**/
-	
+    padding-top: 300px;
+    padding-bottom: 300px;
 }
 .topbox{
 	display: flex;
@@ -342,6 +386,8 @@ body.darkmode .fa-magnifying-glass{
 .main{
 	width: 80%;/**/
 	margin: auto;/**/
+    padding-top: 300px;
+    padding-bottom: 300px;
 	
 }
 .topbox{
@@ -382,11 +428,8 @@ body.darkmode .fa-magnifying-glass{
     
     
 }
-
-
-/*아이패드 에어 */
-@media only screen (min-device-width : 769px)  and (max-device-width : 820px){ 
-	
+@media only screen and (min-device-width: 769px) and (max-device-width: 820px) {
+      
 .thingTotalBox {
     display: flex;
     justify-content: space-between;
@@ -399,6 +442,8 @@ body.darkmode .fa-magnifying-glass{
 .main{
 	width: 80%;/**/
 	margin: auto;/**/
+    padding-top: 300px;
+    padding-bottom: 300px;
 	
 }
 .topbox{
@@ -424,7 +469,7 @@ body.darkmode .fa-magnifying-glass{
     border: none;
     float: right;
     margin-top: 10px;
-     margin-right: 120px; /**/
+    margin-right: 120px; /**/
     background: transparent;/**/
 }
 .mainTitle {
@@ -435,11 +480,69 @@ body.darkmode .fa-magnifying-glass{
     padding-left: 2px;
 }    
     
-.thingBox > nth-child {
-	
-	weight: 30%
-	
-	
+  
+
+
+}
+
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  /* CSS Styles */
+
+.thingTotalBox {
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;/**/
+
+}
+.main{
+	width: 80%;/**/
+	margin: auto;/**/
+    padding-top: 300px;
+    padding-bottom: 300px;
 	
 }
+.topbox{
+	display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    margin: auto;/**/
+	width: 80%; /**/
+}
+#searchboxInput{
+	width: 120px; /**/
+	height: 0px;
+    border-radius: 19px;
+    border: solid 1px var(--grey-color);
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    margin: auto;
+ 	background: transparent;
+}
+.searchInputButton {
+	position: absolute;
+    border: none;
+    float: right;
+    margin-top: 10px;
+    margin-right: 120px; /**/
+    background: transparent;/**/
+}
+.mainTitle {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    float: right;
+    padding-left: 2px;
+}    
+    
+
 }

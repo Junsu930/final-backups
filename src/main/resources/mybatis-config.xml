@@ -12,10 +12,15 @@
 	</settings>
 <!-- 별칭 작성 부분 -->
 <!-- VO클래스의 패키지명 + 클래스명 작성하는 것이 불편하기 때문에 짧은 별칭 부여 -->
+		
 	<typeAliases>
-	
+		<typeAlias type="edu.kh.fin.band.dbTest.DBTestVO" alias="dbTest"/>
+		<typeAlias type="edu.kh.fin.band.chatting.model.vo.TempUserVo" alias="tempUser"/>
+		<typeAlias type="edu.kh.fin.band.chatting.model.vo.ChatVo" alias="chat"/>
 	</typeAliases>
 <!-- mapper 파일(SQL 작성되는파일) 위치 등록 부분 -->
 	<mappers>
+		<mapper resource="/mapper/mapper.xml"/>
+		<mapper resource="/mapper/chat-mapper.xml"/>
 	</mappers>
 </configuration>

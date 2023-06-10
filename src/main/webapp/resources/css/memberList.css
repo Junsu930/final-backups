@@ -1,7 +1,9 @@
 .container{
+	width: 80%;
 	display: flex;
 	justify-content : space-around;
 	flex-wrap: wrap;
+	margin: auto;
 	
 }
 
@@ -13,7 +15,6 @@
 	border: 1px solid black;
 	display: flex;
 	flex-direction: column;
-	cursor: pointer;
 	
 }
 
@@ -65,6 +66,7 @@
     align-items: center;
 }
 
+
 .chat > div:nth-child(1) {
     flex-basis: 50%;
     display: flex;
@@ -77,5 +79,23 @@
 
 .darkmode .item {
 	border: 1px solid #fff;
+}
+
+
+.fa-solid fa-guitar {
+	width:16px;
+}
+
+.sendchat {
+	cursor: pointer;
+	
+}
+
+.userinfo {
+	cursor: pointer;
+}
+
+.fa-regular fa-comment-dots {
+	width:20px;
 }
 
